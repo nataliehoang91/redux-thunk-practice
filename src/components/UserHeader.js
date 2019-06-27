@@ -20,6 +20,19 @@ class UserHeader extends React.Component{
     }
 }
 
+
+
+
+const mapStateToProps=(state)=>{
+    return {users:state.users }
+}
+
+const mapDispatchToProps = ({
+    fetchUser
+})
+export default connect(mapStateToProps,mapDispatchToProps)(UserHeader);
+
+
 // const fn = x => x * 10;
 
 // const hoc = fn => y => fn(y + 2)
@@ -31,13 +44,3 @@ class UserHeader extends React.Component{
 // y => (y+2) * 10
 
 // fn2(1) = 
-
-
-const mapStateToProps=(state)=>{
-    return {users:state.users }
-}
-
-// const mapDispatchToProps = ({
-//     fetchUser
-// })
-export default connect(mapStateToProps,{fetchUser})(UserHeader);
